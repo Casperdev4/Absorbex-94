@@ -429,8 +429,24 @@
     <image:image>
         <image:loc>https://assainissement-94.com/vidange-fosse-septique-94.webp</image:loc>
         <image:caption>Pompage de fosses septiques et nettoyage de bacs à graisse réalisés à Le Kremlin-Bicêtre.</image:caption>
-        <image:title>Vidange et entretien fosse septique Le Kremlin-Bicêtre</image:ti
-
+        <image:title>Vidange et entretien fosse septique Le Kremlin-Bicêtre</image:title>
+    </image:image>
+    <image:image>
+        <image:loc>https://assainissement-94.com/pompe-de-relevage-94.webp</image:loc>
+        <image:caption>Pose, dépannage et maintenance de pompes de relevage pour eaux usées à Le Kremlin-Bicêtre.</image:caption>
+        <image:title>Installation pompe de relevage Le Kremlin-Bicêtre</image:title>
+    </image:image>
+    <image:image>
+        <image:loc>https://assainissement-94.com/raccordement-assainissement-94.webp</image:loc>
+        <image:caption>Branchement au réseau d’assainissement collectif ou individuel par Absorbex à Le Kremlin-Bicêtre.</image:caption>
+        <image:title>Raccordement assainissement Le Kremlin-Bicêtre</image:title>
+    </image:image>
+    <image:image>
+        <image:loc>https://assainissement-94.com/vrd-94.webp</image:loc>
+        <image:caption>Viabilisation de terrain et travaux VRD à Le Kremlin-Bicêtre avec pose de réseaux et raccordements.</image:caption>
+        <image:title>Voirie et Réseaux Divers (VRD) Le Kremlin-Bicêtre</image:title>
+    </image:image>
+</url>
 
 <url>
 <loc>https://assainissement-94.com/assainissement-maisons-alfort.html</loc>
