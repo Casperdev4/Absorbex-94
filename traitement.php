@@ -19,8 +19,13 @@ function est_numero_valide($numero) {
     return preg_match('/^(01|09|06|07|\+336|\+337)\d{8}$/', $numero);
 }
 
+function est_email_valide($email) {
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
 $nom = htmlspecialchars($_POST['nom'], ENT_QUOTES, 'UTF-8');
 $telephone = htmlspecialchars($_POST['telephone'], ENT_QUOTES, 'UTF-8');
+$email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
 $services = htmlspecialchars($_POST['services'], ENT_QUOTES, 'UTF-8');
 $commentaires = htmlspecialchars($_POST['commentaires'], ENT_QUOTES, 'UTF-8');
 
@@ -41,6 +46,7 @@ if (contient_liens($commentaires) || contient_cyrillique($commentaires)) {
 
 $message = "Nom : $nom \n";
 $message .= "Téléphone : $telephone \n";
+$message .= "Email : $email \n";
 $message .= "Prestation : $services \n";
 $message .= "Commentaires : $commentaires \n";
 

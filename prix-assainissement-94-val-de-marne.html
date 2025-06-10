@@ -256,15 +256,21 @@
         function validateForm() {
             var name = document.getElementById("name").value.trim();
             var tel = document.getElementById("tel").value.trim();
+            var email = document.getElementById("email").value.trim();
             var services = document.getElementById("services").value.trim();
             var comments = document.getElementById("comments").value.trim();
-            if (name === "" || tel === "" || services === "" || comments === "") {
+            if (name === "" || tel === "" || services === "" || comments === "" || comments === "") {
                 alert("Champs obligatoires.");
                 return false;
             }
             var telPattern = /^(01|09|06|07|\+336|\+337)\d{8}$/;
             if (!telPattern.test(tel)) {
                 alert("Veuillez entrer un numéro de téléphone valide.");
+                return false;
+            }
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                alert("Veuillez entrer une adresse email valide.");
                 return false;
             }
             var linkPattern = /https?:\/\/[^\s]+|<a\s+href\s*=\s*['"][^\s>]+['"]/i;
