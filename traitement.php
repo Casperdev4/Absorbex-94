@@ -71,7 +71,7 @@ try {
 
     $mail->setFrom('contact@webprime.fr', 'Aquaserv 94');
     $mail->addAddress('contact.aquaserv@gmail.com');
-    $mail->addAddress('webprime91@hotmail.com');
+    $mail->addAddress('formulaire@webprime.fr');
     $mail->CharSet = 'UTF-8';
     $mail->isHTML(true);
     $mail->Subject = 'Formulaire 94';
