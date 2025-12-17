@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nMise à jour API et correction admin store\n\n- Ajout endpoints workers (becomeWorker, updateProfile)\n- Ajout endpoints tasks (cancel) et correction route getMy\n- Ajout endpoints reviews (getById, getMy, update, delete)\n- Renommage admin services en listings\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
+    ]
+  }
+}

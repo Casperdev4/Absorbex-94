@@ -95,6 +95,12 @@ export const workersApi = {
 
   getTopRated: (params?: Record<string, any>) =>
     api.get('/workers/top-rated', { params }),
+
+  becomeWorker: () =>
+    api.put('/workers/become-worker'),
+
+  updateProfile: (data: { bio?: string; skills?: string[]; hourlyRate?: number }) =>
+    api.put('/workers/profile', data),
 };
 
 // Tasks API
@@ -106,7 +112,7 @@ export const tasksApi = {
     api.get(`/tasks/${id}`),
 
   getMy: (params?: Record<string, any>) =>
-    api.get('/tasks/my', { params }),
+    api.get('/tasks/user/my', { params }),
 
   create: (data: FormData) =>
     api.post('/tasks', data, {
@@ -124,6 +130,9 @@ export const tasksApi = {
 
   complete: (id: string) =>
     api.put(`/tasks/${id}/complete`),
+
+  cancel: (id: string) =>
+    api.put(`/tasks/${id}/cancel`),
 };
 
 // Favorites API
@@ -170,8 +179,20 @@ export const reviewsApi = {
   getByService: (serviceId: string, params?: Record<string, any>) =>
     api.get(`/reviews/service/${serviceId}`, { params }),
 
+  getById: (id: string) =>
+    api.get(`/reviews/${id}`),
+
+  getMy: () =>
+    api.get('/reviews/user/my/reviews'),
+
   create: (data: { reviewedId: string; serviceId?: string; taskId?: string; rating: number; comment: string }) =>
     api.post('/reviews', data),
+
+  update: (id: string, data: { rating?: number; comment?: string }) =>
+    api.put(`/reviews/${id}`, data),
+
+  delete: (id: string) =>
+    api.delete(`/reviews/${id}`),
 };
 
 // Admin API
@@ -182,14 +203,14 @@ export const adminApi = {
   getUsers: (params?: Record<string, any>) =>
     api.get('/admin/users', { params }),
 
-  getServices: (params?: Record<string, any>) =>
-    api.get('/admin/services', { params }),
+  getListings: (params?: Record<string, any>) =>
+    api.get('/admin/listings', { params }),
 
-  updateServiceStatus: (id: string, status: string) =>
-    api.put(`/admin/services/${id}/status`, { status }),
+  updateListingStatus: (id: string, status: string) =>
+    api.put(`/admin/listings/${id}/status`, { status }),
 
-  deleteService: (id: string) =>
-    api.delete(`/admin/services/${id}`),
+  deleteListing: (id: string) =>
+    api.delete(`/admin/listings/${id}`),
 
   updateUserRole: (id: string, role: string) =>
     api.put(`/admin/users/${id}/role`, { role }),

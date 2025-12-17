@@ -89,7 +89,7 @@ export const useAdminStore = create<AdminState>((set, get) => ({
   fetchServices: async (params?: Record<string, any>) => {
     set({ isLoading: true, error: null });
     try {
-      const response = await adminApi.getServices(params);
+      const response = await adminApi.getListings(params);
       set({
         services: response.data.data,
         servicesPagination: response.data.pagination,
@@ -125,7 +125,7 @@ export const useAdminStore = create<AdminState>((set, get) => ({
   updateServiceStatus: async (serviceId: string, status: string) => {
     set({ isLoading: true, error: null });
     try {
-      await adminApi.updateServiceStatus(serviceId, status);
+      await adminApi.updateListingStatus(serviceId, status);
       set((state) => ({
         services: state.services.map((s) =>
           s._id === serviceId ? { ...s, status: status as any } : s
@@ -144,7 +144,7 @@ export const useAdminStore = create<AdminState>((set, get) => ({
   deleteService: async (serviceId: string) => {
     set({ isLoading: true, error: null });
     try {
-      await adminApi.deleteService(serviceId);
+      await adminApi.deleteListing(serviceId);
       set((state) => ({
         services: state.services.filter((s) => s._id !== serviceId),
         isLoading: false,
