@@ -117,12 +117,15 @@
             <div class="image-container">
                 <img src="aquaserv.webp" alt="entreprise assainissement Nogent-sur-Marne">
             </div>
-            <form id="contactForm" onsubmit="return submitToWebPrime(event)">
+            <form id="contactForm" action="https://formsubmit.co/contact@assainissement-94.com" method="POST" onsubmit="return sendBoth(event)">
                 <div class="hp-wrap">
                     <label for="website">Votre site web :</label>
-                    <input type="text" id="website" name="_gotcha" autocomplete="off">
+                    <input type="text" id="website" name="_honey" autocomplete="off">
                 </div>
-                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="Formulaire">
+                <input type="hidden" name="_next" value="https://assainissement-94.com/">
                 <label for="name">Nom :</label>
                 <input type="text" id="name" name="nom" required>
                 <label for="tel">Telephone :</label>
